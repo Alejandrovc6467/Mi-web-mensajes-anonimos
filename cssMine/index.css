@@ -1,0 +1,657 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;/*para que las cajas no se desborden unas con otras*/
+}
+
+
+/*/////////////////////  MODOFICACIONES AL SCROLL BAR ORIGINAL   /////////////////////////////////*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Toda la linea */
+  ::-webkit-scrollbar-track {
+    background: #00000000;
+  }
+   
+  /* indicador */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.250); 
+    border-radius: 10px;
+
+  }
+  
+  /* indicador hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(67, 93, 114, 0.574); 
+  }
+
+/*/////////////////////  MODOFICACIONES AL SCROLL BAR ORIGINAL   /////////////////////////////////*/
+
+
+a{
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+a:hover{
+    text-shadow: 0 0 10px #00ffff, 0 0 5px #ffffff;
+    transition: 0.3s;
+}
+
+p{
+    color: rgba(255, 255, 255, 0.658); 
+}
+
+
+
+body{
+
+    /*background: #c31432;  /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right , #240b36, #c31432, yellow); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Montserrat', sans-serif;
+    background: url(../imagenes/fondo.jpg) ;
+    background-position: center;/*centro la imagen*/
+    background-attachment: fixed;
+    background-size: cover;/**/
+   
+    
+}
+    
+
+
+    header{
+
+        display: flex;/*Este es un flex padre por asi decirlo entonces tambien debe llevar el display:flex
+        porque quiero hacer todos los elementos que estan contenidos aqui(en header) responsive*/
+            
+        /*flex-direction: column;/*este hace lo mismo que el de abajo(no se porque use el de abajo y no este)*/
+        /*flex-wrap: nowrap;/*El nowrap(no me respeta los anchos de los elementos, los encoje todos para dejarlos en una misma fila)  ES PARA QUE SE ADAPTE SEGUN EL TAMANIO ESTABLECIDO*/
+        flex-flow: row nowrap;/*ESte flex-flow abarca tanto "flex-drirection" como "flex-wrap" es como una fusion de los dos, por eso se uso este, pero puedo usar los otros dos en vez de este sin problema*/
+        align-items: center;
+
+        height: 10vh;
+
+    }
+
+        .logo{
+
+            flex: 1 1 auto;
+        }
+
+            .logo a{
+                    
+                color: rgb(255, 255, 255);/*Color del texto del logo*/
+                font-size: 35px;
+                font-style: italic;
+                font-family: 'Anton', sans-serif;
+                letter-spacing: -1PX;
+                padding-left: 25px;
+                /* text-shadow: 2px 0px 20px #00f7ff7a;/**/
+                    
+            }
+
+                /*desde aqui*/
+                .logo span{
+                    display: inline-block;
+                    animation: logo-anim 1s infinite;
+                    animation-delay: calc(0.1s * var(--item));
+                    text-shadow: 2px 0px 20px #00f7ff7a;/**/
+                    animation-duration: 5s;
+                    
+                }
+
+
+                
+
+                @keyframes logo-anim {
+ 
+                    0%,
+                    80%,
+                    
+                
+                    50% {
+                        
+                        transform:rotate(360deg);
+                       
+                    }
+                
+                    55% {
+                        
+                        transform:rotate(90deg);
+                       
+                    }
+                
+                }
+                /*hasta aqui*/
+                
+
+            .nav{
+
+                flex: 3 1 auto;
+
+                display: flex;
+                justify-content: flex-end;
+                
+            }
+
+                
+                .nav a{
+                    color: white;
+                    font-size: 11px;
+                    text-transform: uppercase;/*esto es para que se ponga en letras mayusculas, tambien esta lowercase como en java (pero bueno esto lo pude haber escrito es mayusculas en el html da lo mismo)*/
+                    padding: 0 25px;/*0 arriba y abajo   10px hacia los lados*/
+                    letter-spacing: 2px;/*esto me crea una separacion por letra de 2px*/
+                }
+
+
+            /*Estas son las caracteristicas del boton nav que va a aparecer cuando sea responsive
+            Note que esta en display:none  esto para que no sea visible sino hasta que cumpla la condicion de ancho de pantalla y se pone vivible en el media query de abajo*/
+            header .fa-bars {
+                font-size:1.5rem;
+                color:#ffffff;
+                cursor:pointer;/* se cambie el puntero por esa manita que aparece */
+                display:none;/**/
+                transition: 1.2s;
+                margin-right: 15px;
+    
+            }   
+            
+            
+            header .fa-bars:hover {
+                text-shadow: 0 0 10px #00ffff, 0 0 5px #ffffff;
+                transition: 0.3s;
+            }
+            
+
+
+
+
+
+
+
+
+
+/* ///////////////////////////////////////////////////////  INICIO  contenido de mi web ///////////////////////////////////////////////////*/
+
+
+.titulo{
+
+    margin-top: 50px;
+
+}
+
+
+    h1{
+        color: white;
+        text-shadow: 0px 0px 5px #00ffff7e;/**/
+        font-family: 'Days one';
+        font-size: 35px;
+        font-weight: 400px;
+        letter-spacing: 1px;
+        text-align: center;
+        margin: 0px 15vw 30px 15vw;/**/ 
+    }
+
+    h2{
+        font-size: 15px;
+        letter-spacing: 1px;
+        font-weight: 100px;
+        color: rgba(255, 255, 255, 0.658);
+        margin: 0px 25vw 30px 25vw;/**/
+        text-align: center;
+    }
+
+
+
+
+/*///////////////////////////  introducir mensaje /////////////////////////////////*/
+
+.ingresarMensaje{
+    margin: 100px 0 100px 0;
+}
+
+form{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+ 
+
+
+ .input-group{
+    position: relative;
+    margin-top: 100px;
+    margin-bottom: 50px;
+
+
+}
+
+    .textarea{
+        padding: 20px 10px 5px 5px;
+        border: none;
+        border-radius: 10px;
+        font: inherit;
+        color: rgba(255, 255, 255, 0.714);
+        background-color: transparent;
+        outline: 2px solid #088cff;
+        /*resize: none;/**/
+
+       
+    }
+
+    
+
+        .textarea:hover{
+            box-shadow: 0 0 10px 0 rgba(53, 99, 144, 0.455), 0 0 10px 4px rgba(53, 99, 144, 0.455);
+            transition: 0.4s;
+        }
+
+
+
+
+
+
+.button{
+                    
+    margin-top: 25px;
+
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+    padding: 6px;
+    color: #088cff;
+    border: 2px solid #088cff;
+    border-radius: 32px;
+    transform: translate(0);
+
+    background: transparent;
+    width: 160px;
+    cursor: pointer;/*me cambia el cursor por la manita*/
+    overflow: hidden;
+}
+
+    .button::before {
+
+        content: "";
+        position: absolute;
+        background:#088cff;
+        width: 8px;
+        top: 0;
+        bottom: 0;
+        left: -32px;
+        transform: rotate(-16deg);
+        filter: blur(6px);  
+        transition: 0.75s;
+    }
+
+    .button:hover{
+        text-shadow: 0 0 10px #00ffff, 0 0 5px #ffffff;
+        box-shadow: 0 0 10px 0 rgba(53, 99, 144, 0.455), 0 0 10px 4px rgba(53, 99, 144, 0.455);
+        transition: 0.4s;
+    }
+
+    
+    .button:hover::before{
+        left: calc(100% + 32px);
+        transition: 0.75s; 
+    }
+
+    
+/*///////////////////////////  fin de introducir mensaje /////////////////////////////////*/
+
+
+
+
+
+
+
+
+
+
+/*////////////////////////////////  Lista de mensajes /////////////////////////////////////////////////////////////*/
+
+
+.contenedorPadreMensajes{
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; 
+
+
+}
+
+.contnedorListaMensajes{
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; 
+
+    
+    background-color: rgba(0, 0, 0, 0.150);/**/ 
+    border-radius: 25px;
+    margin: 10px 20px 0px 20px;/**/
+    height: 600px;
+    width: 75vw;
+    
+}
+
+    .cantidadMensajesTitle{
+
+        background-color: rgba(0, 0, 0, 0.300);/**/
+        padding: 10px 0px 10px 0px;/**/
+        border-radius: 30px;
+        margin-top: 25px;
+        width: 72vw;
+    }
+
+    .listaMensajes{
+       /*background-color: rgba(85, 227, 8, 0.878);/**/
+        margin: 10px 0px 20px 0px;/**/
+        height: 600px;/**/
+       /* width: 75vw;/**/
+        overflow-y: auto;/**/
+        overflow-x: auto;/**/
+
+        /*text-align: center;/**/
+    }
+
+
+    .hora{
+        font-size: 12px;
+        color: gray;
+        font-family: cursive;
+    }
+
+    .mensaje{
+        
+        background-color: rgba(0, 0, 0, 0.200);/**/
+        margin: 15px 20px 50px 20px;
+        padding: 50px 20px 50px 20px;
+        height: 300px;/**/
+        border-radius: 30px;
+        overflow-y: auto;
+        overflow-x: auto;
+
+    }
+
+        .listaMensajes p{
+
+            letter-spacing: 1px;
+            /*font-family: cursive;/**/
+        }
+
+        h4{
+            color: rgba(255, 255, 255, 0.375);
+            padding-top: 15px;
+            text-align: center;
+            font-family: cursive;
+        }
+
+
+
+
+
+/*////////////////////////////////  fin  de  Lista de mensajes /////////////////////////////////////////////////////////////*/
+
+
+
+
+
+
+
+
+/* /////////////////////////////////////////////////////// FIN  contenido de mi web ///////////////////////////////////////////////////*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*///////////////////////////////////////  inicio footer //////////////////////////////////////////////////////////////////////////////////*/
+
+    footer{
+
+        display: flex;
+        /*flex-direction: column;/*este hace lo mismo que el de abajo(no se porque use el de abajo y no este)*/
+        /*flex-wrap: nowrap;/*El nowrap(no me respeta los anchos de los elementos, los encoje todos para dejarlos en una misma fila)  ES PARA QUE SE ADAPTE SEGUN EL TAMANIO ESTABLECIDO*/
+        flex-flow: row nowrap;/*ESte flex-flow abarca tanto "flex-drirection" como "flex-wrap" es como una fusion de los dos, por eso se uso este, pero puedo usar los otros dos en vez de este sin problema*/
+        text-align: center;
+        align-items: center;
+
+        height: 10vh;
+    }
+
+
+        .derechos{
+            font-size: 9px;
+            letter-spacing: 2px;
+            flex: 1 1 auto;
+
+
+            display: flex;
+            justify-content: flex-start;
+            margin-left: 50px;
+        }
+
+
+
+            .redes{
+                flex: 2 1 auto;
+                display: flex;
+                justify-content: center;
+            }
+
+                .redes a{
+                    color: rgba(255, 255, 255, 0.658); 
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    font-size: 11px;
+                    letter-spacing: 2px;
+                }
+
+            
+
+            .disenado{
+                
+                font-size: 9px;
+                letter-spacing: 2px;
+                flex: 1 1 auto;
+
+
+                display: flex;
+                justify-content: flex-end;
+                margin-right: 50px;
+               
+            }
+                .nameDesigned{
+                    color: rgb(255, 255, 255);
+                    font-style: italic;/**/
+                    font-family: 'Anton', sans-serif;/**/
+                    /*font-size: 12px;/**/
+                    letter-spacing: 0.5PX;
+                    
+                }
+
+
+                
+                
+
+
+/*///////////////////////////////////////////***************Inicio de los media query ///////////////////////////////////////////////////*/
+                
+
+                @media all and (max-width:785px){
+
+                    /*/////////////////////  ESto es del navbar //////////////////////////////////////////*/
+
+                   header .fa-bars {
+                        display:block;
+                    }
+                    
+                    header .nav {
+
+                        position:fixed;
+                        top:-100rem;/*Con esto oculto la barra de navegacion, lo que hago es madarla para arriba para que no se vea*/
+                        left: 0;
+                        width:100%;
+                        /*background:#161e4a;/**/
+                        background-image: linear-gradient( #082141, #071730);
+                        
+
+                        /*solo para el border radius*/
+                        -webkit-border-bottom-right-radius: 30px;
+                        -webkit-border-bottom-left-radius: 30px;
+                        -moz-border-radius-bottomright: 30px;
+                        -moz-border-radius-bottomleft: 30px;
+                         border-bottom-right-radius: 30px;
+                         border-bottom-left-radius: 30px;
+
+                        opacity: 0;/*Y aqui le pongo la opacidadd en 0 por si se llega a ver, pero obvio no va a pasar, pero tengo la linea aqui por estaba haciendo pruebas*/
+                        transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+
+                        flex-flow: column;/*Aqui ponga la nav bar en columnas*/
+                        padding: 2rem 0;
+
+                        /*margin: -1rem 0;/**/
+                        width: 100%;
+                        text-align: center;
+
+                        font-size: 3rem;
+                        /*display:block;/**/
+
+                        margin-top: 0px;
+                       
+                    }
+                    
+                    header .nav a {
+                        padding-bottom: 20px;
+                    }
+                    
+                    
+                    /* Esta clase es para el javaScript, y es la que hace la accion cuando presiono el boton (Revisar el main.js) */
+                    header .nav-toggle {/*creo esto me va a hacer interferencia por el ombre del otro nav, mejor cambiar el nombre*/
+                        top:5.0rem;
+                        opacity: 1;
+                        
+                    }
+
+	                /*//////////////////  Hasta aqui es lo que necesito para boton nav bar cuando es responsive /////////////////////*/
+
+
+
+
+
+
+
+
+
+                    /*/////////////////////// lista mensajes //////////////////////////////////////////////////////////////////////////////*/
+
+                    .contnedorListaMensajes{
+                        width: 95vw;
+                    }
+
+
+                    .cantidadMensajesTitle{
+                        width: 90vw;
+                    }
+
+                    /*///////////////////////  FIN DE lista mensajes //////////////////////////////////////////////////////////////////////////////*/
+
+
+
+
+
+
+
+
+
+
+
+                    /*//////////////////////////////////// Esto es del footer  /////////////////////////////////*/
+
+                    .textarea{
+                        width: 80vw;
+                    }
+
+                    /*////////////////////////////////////  fin Esto es del footer  /////////////////////////////////*/
+
+                }
+
+
+                @media all and (max-width:640px){
+
+
+
+                    h1{
+                        color: white;
+                        text-shadow: 0px 0px 5px #00ffff7e;/**/
+                        font-family: 'Days one';
+                        font-size: 25px;
+                        font-weight: 400px;
+                        letter-spacing: 1px;
+                        text-align: center;
+                        margin: 0px 15vw 30px 15vw;/**/ 
+                    }
+                    
+                    h2{
+                        font-size: 12px;
+                        letter-spacing: 1px;
+                        font-weight: 100px;
+                        color: rgba(255, 255, 255, 0.658);
+                        margin: 0px 25vw 30px 25vw;/**/
+                        text-align: center;
+                    }
+
+
+                    footer{
+                        flex-flow: column nowrap;/*ESte flex-flow abarca tanto "flex-drirection" como "flex-wrap" es como una fusion de los dos, por eso se uso este, pero puedo usar los otros dos en vez de este sin problema*/
+                        height: 10vh;
+                        margin-top: 50px;
+                        
+                     }
+
+                    .disenado{
+                        margin: 0;
+                        order: 1;/*Para cambiar el orden porque no me gusta cunado pasa a colimna, lo prefiero asi como lo estoy dejando*/
+                    }
+
+                    .derechos{
+                        margin: 0;
+                        order: 2;
+                    }
+
+                    .redes{
+                        flex: 1 1 auto;/*Sin la media estaba 2 1 auto*/
+                        order: 0;
+                    }
+
+                }
+
